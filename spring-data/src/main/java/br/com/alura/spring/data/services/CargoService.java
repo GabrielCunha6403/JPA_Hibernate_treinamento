@@ -35,7 +35,7 @@ public class CargoService {
                 read(scanner);
                 break;
             case 4:
-                readAll(scanner);
+                readAll();
                 break;
             case 5:
                 delete(scanner);
@@ -72,7 +72,7 @@ public class CargoService {
         Cargo cargo = cargoOp.orElseThrow(() -> new Exception("Cargo não encontrado"));
         System.out.println("ID: " + cargo.getId() + "|| DESCRIÇÃO: " + cargo.getDescricao());
     }
-    private void readAll(Scanner scanner) throws Exception {
+    private void readAll() throws Exception {
         Iterable<Cargo> cargos = cargoRepository.findAll();
         cargos.forEach((cargo -> System.out.println(cargo)));
     }
@@ -83,5 +83,4 @@ public class CargoService {
         this.cargoRepository.deleteById(id);
         System.out.println("Cargo deletado");
     }
-
 }
