@@ -4,6 +4,7 @@ import br.com.alura.spring.data.orm.Funcionario;
 import br.com.alura.spring.data.repository.FuncionarioRepository;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
@@ -109,6 +110,5 @@ public class FuncionarioService {
         this.funcionarioRepository.deleteById(id);
         System.out.println("Funcionário deletado!");
     }
-
 
 }

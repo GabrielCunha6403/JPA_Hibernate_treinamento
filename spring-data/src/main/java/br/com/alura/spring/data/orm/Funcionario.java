@@ -4,13 +4,11 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
-import org.hibernate.annotations.Fetch;
-import org.hibernate.annotations.FetchMode;
 
 import javax.persistence.*;
-import java.util.Calendar;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "funcionarios")
@@ -28,7 +26,7 @@ public class Funcionario {
     @Getter @Setter
     private Float salario;
     @Getter @Setter
-    private Date dataContratacao;
+    private LocalDate dataContratacao;
     /*@ManyToOne
     @JoinColumn(name = "cargo_id", nullable = false)
     private Cargo cargo;
@@ -43,6 +41,6 @@ public class Funcionario {
         this.nome = nome;
         this.cpf = cpf;
         this.salario = salario;
-        this.dataContratacao = new Date();
+        this.dataContratacao = LocalDate.now();
     }
 }
